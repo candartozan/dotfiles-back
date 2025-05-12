@@ -1,0 +1,30 @@
+{
+  "position": "top",
+  "height": 35,
+  "include": [
+    "~/.config/waybar/waybar-quicklinks.jsonc",
+    "~/.config/waybar/modules.jsonc"
+  ],
+  "modules-left": ["custom/appmenu", "custom/music"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": [
+    "network",
+    "bluetooth",
+    "pulseaudio#mic",
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "clock",
+    "tray",
+    "custom/powermenu"
+  ],
+  "custom/music": {
+    "format": "  {}",
+    "escape": true,
+    "interval": 5,
+    "tooltip": false,
+    "exec": "playerctl metadata --format='{{ title }}'",
+    "on-click": "playerctl play-pause",
+    "max-length": 50
+  }
+}
