@@ -1,0 +1,31 @@
+{
+  "position": "top",
+  "height": 35,
+  "include": [
+    "~/.config/waybar/waybar-quicklinks.jsonc",
+    "~/.config/waybar/modules.jsonc"
+  ],
+  "modules-left": [
+    "custom/appmenu",
+    "group/cpu-memory-disk",
+    "group/temperature-fan",
+    "wlr/taskbar",
+    "custom/music"
+  ],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": [
+    "group/network-bluetooth",
+    "group/pulseaudio-backlight",
+    "tray",
+    "group/battery-powerprofiles-clock"
+  ],
+  "custom/music": {
+    "format": "   {}",
+    "escape": true,
+    "interval": 5,
+    "tooltip": false,
+    "exec": "playerctl metadata --format='{{ title }}'",
+    "on-click": "playerctl play-pause",
+    "max-length": 50
+  }
+}
